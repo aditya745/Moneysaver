@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
-class Test extends Component {
+class Main extends Component {
+  // Declaring the state
   state = {
     n: ""
   };
+  // Main function to calculate price 
   calculate = (n, prices, pieces) => {
     const packUnits = Math.floor(n / pieces[1]);
     const boxUnits = Math.floor(n / pieces[2]);
@@ -32,6 +34,7 @@ class Test extends Component {
       );
     }
   };
+  // Setting the state with the input value
   updateInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -45,9 +48,9 @@ class Test extends Component {
         box: { name: "Big box", quantity: 264, price: 950 }
       }
     ];
-    console.log(pricelist);
     return (
       <div>
+        <h2>Money Saving offers</h2>
         <table>
           <tbody>
             {pricelist.map(item => (
@@ -99,4 +102,4 @@ class Test extends Component {
   }
 }
 
-export default Test;
+export default Main;
